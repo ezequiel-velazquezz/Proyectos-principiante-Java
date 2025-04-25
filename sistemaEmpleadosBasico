@@ -1,0 +1,40 @@
+// Sistema básico de empleados
+// Este programa recibe por consola datos sobre un empleado y luego los imprime en consola
+
+// Basic System of employees
+// This program recives data about and employee and then prints it to the console
+
+import java.util.Scanner;
+public class sistemaEmpleados {
+    public static void main(String[] args) {
+        System.out.println("************Sistema de empleados**************");
+        var consola = new Scanner(System.in);
+        
+        // Nombre del empleado
+        System.out.print("Ingresa el nombre el empleado: ");
+        var nombreEmpleado = consola.nextLine();
+        
+        // Edad del empleado
+        System.out.print("Ingresa la edad del empleado: ");
+        var edadEmpleado = Integer.parseInt(consola.nextLine());
+        
+        // Sueldo del empleado
+        System.out.print("Ingresa el sueldo del empleado: ");
+        var sueldoEmpleado = Double.parseDouble(consola.nextLine());
+        
+        // Jefe de departamento
+        System.out.print("Es jefe de departamento (true/false)?: ");
+        var isJefe = Boolean.parseBoolean(consola.nextLine());
+        
+        // Imprimir los valores del Empleado
+        System.out.println("\nDatos del Empleado");
+        System.out.println("\tnombreEmpleado = " + nombreEmpleado);
+        System.out.println("\tedadEmpleado = " + edadEmpleado + " años");
+        //System.out.println("\tsueldoEmpleado = " + sueldoEmpleado);
+        System.out.println("\tEs jefe de un area? = " + isJefe);
+        System.out.printf("\tSalario: $%.2f%n",(sueldoEmpleado));
+        //var mensaje = String.join(",","nombreEmpleado","edadEmpleado","sueldoEmpleado","isJefe");
+        ///System.out.println("mensaje = " + mensaje);
+        
+    }
+}
