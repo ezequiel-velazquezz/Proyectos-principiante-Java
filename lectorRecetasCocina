@@ -1,0 +1,37 @@
+// Lector de recetas de cocina Java
+// El programa pide al usuario información acerca de una receta y posteriormente lo imprime en la consola
+
+// Java Recipe Reader
+// The program asks the user for information about a recipe and then prints it to the console
+
+import java.util.Scanner;
+public class recetasCocina {
+    public static void main(String[] args) {
+        System.out.println("*** Recetas de Cocina ***");
+        
+        var consola = new Scanner(System.in);
+        
+        // Nombre de la receta 
+        System.out.print("Ingresa el nombre de la receta: ");
+        var nombreReceta = consola.nextLine();
+        
+        // Ingredientes
+        System.out.print("Ingresa los ingredientes: ");
+        var ingredientes = consola.nextLine();
+        
+        // Tiempo de preparación
+        System.out.print("Ingresa el tiempo de preparacion: ");
+        var tiempoPreparacion = Integer.parseInt(consola.nextLine());
+        
+        // Dificultad de preparación
+        System.out.print("Ingresa la dificultad de preparacion: ");
+        var dificultadPreparacion = consola.nextLine();
+        
+        // Imprimir detalles de la receta
+        System.out.println("\n--- Receta de cocina ---");
+        System.out.println("\tNombre receta: " + nombreReceta);
+        System.out.println("\tIngredientes: " + ingredientes);
+        System.out.println("\tTiempo de preparacion: " + tiempoPreparacion + " minutos");
+        System.out.println("\tDificultad: " + dificultadPreparacion);
+    }
+}
