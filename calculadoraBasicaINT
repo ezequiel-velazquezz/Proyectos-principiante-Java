@@ -1,0 +1,26 @@
+// Calculadora básica de enteros
+// El programa pide al usuario dos enteros y luego los suma
+
+// Integer basic calculator
+// The program ask the user for two integers and then adds them together
+
+import java.util.Scanner;
+public class javaPractice {
+    public static void main(String[] args) {
+        System.out.println("*** Calculadora suma de enteros básica ***");
+        
+        var consola = new Scanner(System.in);
+        
+        System.out.print("\nIngresa un entero: ");
+        var numeroEntero = Integer.parseInt(consola.nextLine());
+        
+        System.out.print("\nIngresa un segundo entero: ");
+        var numeroEntero2 = Integer.parseInt(consola.nextLine());
+        
+        var resultado = numeroEntero + numeroEntero2;
+        
+        System.out.println("\nEl resultado de la suma es: " + resultado);
+        
+        
+}
+}
