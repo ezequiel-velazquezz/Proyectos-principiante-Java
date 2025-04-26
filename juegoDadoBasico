@@ -1,0 +1,37 @@
+// Juego del dado básico
+// El programa genera un numero aleatorio entre 1 y 6, luego el usuario debe adivinar cuál. Si el número es el mismo, gana y si es diferente pierde
+
+// Basic dice game
+// The program generates a random num between one and six, then the user has to guess wich. If the number is the same, wins and if it's different, loses
+
+import java.util.Scanner;
+import java.util.Random;
+public class SimulacionDado {
+    public static void main(String[] args) {
+        System.out.println("*** Adivina el numero del dado ***");
+        
+        var consola = new Scanner(System.in);
+        
+        var random = new Random();
+        
+        // Explicación del juego
+        System.out.println("""
+                           Las reglas son las siguientes:
+                           El programa generara un numero 
+                           aleatorio entre 1 y 6 como un dado
+                           luego debes adivinar el numero que el
+                           programa eligio""");
+        
+        var numeroAleatorio = random.nextInt(6)+1;
+        System.out.print("Adivina el numero: ");
+        var userNumero = Integer.parseInt(consola.nextLine());
+        
+        if (numeroAleatorio == userNumero){
+            System.out.println("Has adivinado el numero!");
+        }
+        if (numeroAleatorio != userNumero){
+            System.out.println("No has podido adivinar, vuelve a ejecutar el programa");
+            System.out.println("El numero era " + numeroAleatorio);
+        }
+    }
+}
