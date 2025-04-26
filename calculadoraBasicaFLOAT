@@ -1,0 +1,21 @@
+// Calculadora de flotantes básica
+// El programa pide al usuario dos flotantes y luego los suma (El resultado muestra dos decimales)
+
+// Basic float calculator
+// The program ask the user fot two floats and then adds them together (The result only shows two decimals )
+public static void main(String[] args) {
+        System.out.println("*** Calculadora de flotantes ***");
+        
+        var consola = new Scanner(System.in);
+        
+        System.out.print("\nIngresa un valor flotante: ");
+        var numeroFlotante = Float.parseFloat(consola.nextLine());
+        
+        System.out.print("\nIngresa otro valor flotante: ");
+        var numeroFlotante2 = Float.parseFloat(consola.nextLine());
+        
+        var resultado = numeroFlotante + numeroFlotante2;
+        
+        System.out.printf("\nEl resultado es: %.2f%n",resultado); // %n añade un salto de linea
+    }
+}
