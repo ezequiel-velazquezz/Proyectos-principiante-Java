@@ -1,0 +1,40 @@
+// Sistema de asignación númerica aleatoria
+// El programa pide el nombre completo de tres personas para luego asignarle un numero generado aleatoriamente en el rango de 390000
+
+//Random numeric assign system
+// The program asks the user for the full name of three persons in order to assign them one random number in range of 390000
+
+import java.util.Scanner;
+import java.util.Random;
+public class RandomClass {
+    public static void main(String[] args) {
+        System.out.println("*** Sistema de asignacion numerica aleatoria ***");
+        
+        var aleatorio = new Random();
+        
+        var consola = new Scanner(System.in);
+        
+        // Asignamos un número aleatorio a persona 1
+        System.out.print("\nIngresa tu nombre completo: ");
+        var nombre1 = consola.nextLine();
+        var numeroPersona = aleatorio.nextInt(390000);
+        
+        // Asignamos un número aleatorio a persona 2
+        System.out.print("\nIngresa el nombre completo de la segunda persona: ");
+        var nombre2 = consola.nextLine();
+        var numeroPersona2 = aleatorio.nextInt(390000);
+        
+        // Asignamos un número aleatorio a persona 3
+        System.out.print("\nIngresa el nombre de la tercera persona: ");
+        var nombre3 = consola.nextLine();
+        var numeroPersona3 = aleatorio.nextInt(390000);
+        
+        // Imprimir número asignado a cada persona
+        System.out.println("\n--- Numeros asignados ---\n");
+        System.out.println( nombre1 +": "+ numeroPersona);
+        System.out.println( nombre2 +": "+ numeroPersona2);
+        System.out.println( nombre3 +": "+ numeroPersona3);
+
+
+    }
+}
