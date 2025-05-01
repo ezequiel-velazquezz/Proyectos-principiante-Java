@@ -1,0 +1,57 @@
+// Aplicación de consola desarrollada en Java que genera correos institucionales únicos para estudiantes de una universidad, combinando iniciales, códigos de carrera y números aleatorios. Proyecto ideal para practicar entrada de datos, manipulación de strings y salida formateada.
+// Console application developed in Java that generates unique institutional emails for university students by combining initials, career codes, and random numbers. Ideal project to practice data input, string manipulation, and formatted output.
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class GeneradorEmailsUniversidad {
+    public static void main(String[] args) {
+        
+        // Mensaje de bienvenida al sistema
+        System.out.println("""
+                           *** Sistema generador de correos institucionales ***\n
+                           Bienvenido/a a la Universidad
+                           Te proporcionaremos un correo institucional unico para tu uso.
+                           Por favor proporciona los siguientes datos
+                           """);
+        
+        // Creación de objetos Scanner y Random para entrada de datos y generación aleatoria
+        var console = new Scanner(System.in);
+        var random = new Random();
+       
+        // === Recopilación de datos ingresados por el usuario ===
+        System.out.print("Ingresa tu nombre: ");
+        var nombre = console.nextLine();
+        
+        System.out.print("Ingresa tu apellido: ");
+        var apellido = console.nextLine();
+        
+        System.out.print("Ingresa el codigo de tu carrera: ");
+        var curso = console.nextLine().toUpperCase(); // Convertir a mayúsculas para estandarizar
+        
+        // Generación de un número aleatorio de 4 dígitos
+        var numeroAleatorio = random.nextInt(9999) + 1;
+        
+        // === Procesamiento de datos para crear el correo ===
+        
+        // Obtener la primera letra del nombre y convertirla a mayúscula
+        var nombre2 = nombre.substring(0,1).trim().toUpperCase();
+        
+        // Obtener las primeras 3 letras del apellido y convertirlas a mayúscula
+        var apellido2 = apellido.substring(0,3).trim().toUpperCase();
+        
+        // Formatear el número aleatorio para que siempre tenga 4 dígitos
+        var numeroAleatorio2 = String.format("%04d", numeroAleatorio);
+        
+        // Generar el correo institucional con el formato deseado
+        var correo = nombre2 + apellido2 + curso + numeroAleatorio2 + "@universidad.edu.py";
+        
+        // === Mostrar el resultado final al usuario ===
+        System.out.printf("""
+                         Hola %s,
+                         Tu correo institucional ha sido creado:
+                         %s
+                         Bienvenido!
+                           """, nombre, correo);
+    }
+}
