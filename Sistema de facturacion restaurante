@@ -1,0 +1,65 @@
+// Aplicación de consola en Java que genera una factura detallada para un restaurante. 
+El usuario ingresa el costo de cada plato (entrada, principal, postre y bebida), 
+se calcula el subtotal, se aplica un impuesto del 10% y se muestra un ticket formateado. 
+Proyecto ideal para practicar entrada de datos, operaciones básicas y formato de salida.
+
+// Java console application that generates a detailed bill for a restaurant. 
+The user inputs the cost of each dish (starter, main course, dessert, and drink), 
+a subtotal is calculated, a 10% tax is added, and a formatted ticket is displayed. 
+Ideal project to practice input handling, basic operations, and output formatting.
+
+
+import java.util.Scanner;
+
+public class SistemaFacturacionRestaurante {
+    public static void main(String[] args) {
+        
+        // Mensaje inicial del sistema
+        System.out.println("*** Sistema de facturación restaurante ***");
+        
+        var consola = new Scanner(System.in); // Objeto Scanner para capturar entradas del usuario por consola
+        
+        // Solicitud del costo del plato de entrada
+        System.out.print("Ingrese el costo del plato de entrada: ");
+        var platoEntrada = Integer.parseInt(consola.nextLine()); // Conversión de texto a entero
+        
+        // Solicitud del costo del plato principal
+        System.out.print("Ingrese el costo del plato principal: ");
+        var platoPrincipal = Integer.parseInt(consola.nextLine());
+        
+        // Solicitud del costo del postre
+        System.out.print("Ingrese el costo del postre: ");
+        var costoPostre = Integer.parseInt(consola.nextLine());
+        
+        // Solicitud del costo de la bebida
+        System.out.print("Ingrese el costo de la bebida: ");
+        var costoBebida = Integer.parseInt(consola.nextLine());
+        
+        // Cálculo del subtotal (suma de todos los platos)
+        var subtotal = platoEntrada + platoPrincipal + costoPostre + costoBebida;
+        
+        // Cálculo del total con impuesto del 10% (convertido directamente a entero)
+        var totalImpuesto = (int)(subtotal * 1.10);
+        
+        // Impresión del ticket de facturación con formato
+        System.out.printf("""
+                          \n====== Ticket de facturación ======
+                                 Restaurante xxxxxxxxxx\n
+                              Consumo:
+                              Plato de entrada: %d Gs
+                              
+                              Plato principal: %d Gs
+                          
+                              Postre: %d Gs
+                          
+                              Bebida: %d Gs
+                              
+                              Total a pagar (Impuesto incluido)
+                          
+                              Gs %d Gs
+                          
+                              =================================
+                          
+                          """, platoEntrada, platoPrincipal, costoPostre, costoBebida, totalImpuesto);
+    }
+}
