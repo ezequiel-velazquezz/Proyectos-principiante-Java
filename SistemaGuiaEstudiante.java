@@ -18,6 +18,6 @@ public class SistemaGuiaEstudiante {
             case 2, 4 -> System.out.println("Tu clase esta en el segundo piso");
             case 3 -> System.out.println("Tu clase esta en el tercer piso");
             default -> System.out.println("Este modulo no existe");
-        };
+        }
     }
 }
