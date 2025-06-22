@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class Arg_o_Uru {
+    public static void main(String[] args) {
+        
+        // Crear un objeto Scanner para leer la entrada del usuario
+        var consola = new Scanner(System.in);
+
+        // Variable de control para mantener activo el bucle
+        var valor = true;
+
+        // Palabras clave para identificar la nacionalidad
+        var esUruguayo = "champion";
+        var esArgentino = "zapatilla";
+
+        // Mensaje de bienvenida
+        System.out.println("""
+                           Bienvenido/a
+                           Este es un detector de nacionalidad, si dices una
+                           palabra específica, eres uruguayo, de lo contrario
+                           eres argentino.\n
+                           """);
+
+        // Bucle principal que se repite mientras valor sea true
+        while (valor) {
+            System.out.println("¿Cómo le dices al calzado deportivo en tu país? ");
+            var answer = consola.nextLine().toLowerCase(); // Se normaliza a minúsculas
+
+            // Verifica si la respuesta coincide con la palabra uruguaya
+            if (answer.equals(esUruguayo)) {
+                System.out.println("Eres Uruguayo, ahí la gente le llama \"champion\"");
+                System.out.println("¿Quieres preguntárselo a otra persona?");
+                var usuario = consola.nextLine().toLowerCase();
+                switch (usuario) {
+                    case "si" -> System.out.println("Perfecto, aquí va de nuevo");
+                    case "no" -> {
+                        System.out.println("¡Gracias por probar este programa!");
+                        valor = false; // Finaliza el bucle
+                    }
+                }
+            }
+
+            // Verifica si la respuesta coincide con la palabra argentina
+            else if (answer.equals(esArgentino)) {
+                System.out.println("Eres argentino, ahí la gente le llama \"zapatilla\"");
+                System.out.println("¿Quieres preguntárselo a otra persona?");
+                var usuario = consola.nextLine().toLowerCase();
+                switch (usuario) {
+                    case "si" -> System.out.println("Perfecto, aquí va de nuevo");
+                    case "no" -> {
+                        System.out.println("¡Gracias por probar este programa!");
+                        valor = false; // Finaliza el bucle
+                    }
+                }
+            }
+
+            // Si no coincide con ninguna palabra conocida
+            else {
+                System.out.println("Esa forma de decir no es argentina ni uruguaya");
+                System.out.println("¿Quieres preguntárselo a otra persona?");
+                var usuario = consola.nextLine().toLowerCase();
+                switch (usuario) {
+                    case "si" -> System.out.println("Perfecto, aquí va de nuevo");
+                    case "no" -> {
+                        System.out.println("¡Gracias por probar este programa!");
+                        valor = false; // Finaliza el bucle
+                    }
+                }
+            }
+        } 
+    } 
+} 
